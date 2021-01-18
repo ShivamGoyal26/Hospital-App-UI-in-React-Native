@@ -19,9 +19,20 @@ const Signup = props => {
                         {/* BUTTONS  */}
 
                         <View style={styles.button}>
-                            <Text style={styles.buttonText}> LOG IN </Text>
-                            <Text style={styles.buttonText}> SIGN UP </Text>
-                        </View>
+                       
+                       <TouchableOpacity onPress={() =>{
+                           props.navigation.navigate('LoginScreen');
+                       }}>
+                       <Text style={styles.buttonText}>LOG IN</Text>
+                       </TouchableOpacity>
+                       
+                       <TouchableOpacity onPress={() =>{
+                           props.navigation.navigate('SignUpScreen');
+                       }}>
+                       <Text style={styles.buttonText}> SIGN UP </Text>
+                       </TouchableOpacity>
+                       
+                   </View>
 
                         {/* LOGO  */}
                         <View style={styles.imageStyle}>

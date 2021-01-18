@@ -18,7 +18,13 @@ const Login = props => {
                     {/* BUTTONS  */}
 
                     <View style={styles.button}>
-                        <Text style={styles.buttonText}> LOG IN </Text>
+                       
+                        <TouchableOpacity onPress={() =>{
+                            props.navigation.navigate('LoginScreen');
+                        }}>
+                        <Text style={styles.buttonText}>LOG IN</Text>
+                        </TouchableOpacity>
+                        
                         <TouchableOpacity onPress={() =>{
                             props.navigation.navigate('SignUpScreen');
                         }}>
