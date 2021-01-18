@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, ImageBackground, StatusBar, Image, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground, StatusBar, Image, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 
 
 const Signup = props => {
@@ -12,9 +12,10 @@ const Signup = props => {
                 source={{ uri: 'https://ojasvingroup.com/wp-content/uploads/2018/10/professional-facebook-ads-images.jpg' }}
                 style={styles.bgImage}
             >
-                {/* <ScrollView> */}
+            <View style={{ flex: 1, backgroundColor: "#39559eA9" }}>
+                <ScrollView>
 
-                    <View style={{ flex: 1, backgroundColor: "#39559eA9" }}>
+                    <View>
 
                         {/* BUTTONS  */}
 
@@ -123,7 +124,8 @@ const Signup = props => {
                             </TouchableOpacity>
                         </View>
                     </View>
-                {/* </ScrollView> */}
+                </ScrollView>
+                </View>
             </ImageBackground>
 
 

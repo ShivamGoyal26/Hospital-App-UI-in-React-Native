@@ -26,14 +26,17 @@ const Splash = props => {
                 <TouchableOpacity onPress={() => {
                     props.navigation.navigate('LoginScreen');
                 }} 
+             
                 >
                     <LinearGradient 
                     colors={['#5774ba', '#39559e']}
                     style={styles.signIn}
                     >
-                        <Text style={styles.textSign}>Get Started</Text>
+                  
+                    <Text style={styles.textSign}>Get Started</Text>
                         <MaterialIcon name='navigate-next' size={26} color = {'white'}/>
-                        {/* <Text>H</Text> */}
+                  
+                        
                     </LinearGradient>
                 </TouchableOpacity>
 
@@ -44,10 +47,10 @@ const Splash = props => {
 
 const styles = StyleSheet.create({
     signIn: {
-        width: 150,
+        width: 130,
         height: 40,
         padding: 15,
-        justifyContent: 'space-around',
+        justifyContent: 'center',
         alignItems: 'center',
         alignContent: 'center',
         borderRadius: 50,
