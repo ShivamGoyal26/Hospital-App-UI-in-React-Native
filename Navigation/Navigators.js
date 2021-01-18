@@ -92,7 +92,7 @@ const CustomDrawer = () =>
     <NavigationContainer>
         <MainNavigator.Navigator 
         drawerContentOptions={{
-          activeTintColor: Colors.primaryColor,
+          activeTintColor: Colors.accentColor,
         }}>
         
             <MainNavigator.Screen
@@ -100,7 +100,7 @@ const CustomDrawer = () =>
                 component={RootStackScreen}
                 
                 options={{
-                    drawerLabel: 'Meals',
+                    drawerLabel: 'Home',
                     drawerIcon: () => <Icon name="ios-home-outline" size={26} />,
                     
                 }} />
@@ -110,7 +110,7 @@ const CustomDrawer = () =>
             component={Filter} 
             options={{ 
                 drawerIcon: () => <Icon name="ios-filter" size={26} />,
-                activeTintColor: Colors.primaryColor,
+                activeTintColor: Colors.accentColor,
                 }} />
 
         </MainNavigator.Navigator>

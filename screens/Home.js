@@ -7,7 +7,9 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 const Home = props => {
     return (
         <View style={styles.home}>
-            <MainHeader></MainHeader>
+            <MainHeader onSelect = {() => {
+                props.navigation.toggleDrawer();
+            }}/>
 
             {/* COMPONENT ONE  */}
 
