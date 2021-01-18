@@ -11,10 +11,13 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Appointments from '../screens/Appointments';
 import Cpr from '../screens/Cpr';
 import Message from '../screens/Message';
-import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Filter from '../screens/Filters';
+import Profile from '../screens/Profile';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import Settings from '../screens/Settings';
+import Insurance from '../screens/Insurance';
+import About from '../screens/About';
 
 
 const Stack = createStackNavigator();
@@ -66,7 +69,7 @@ const MyTabs = () =>
                 tabBarColor: Colors.accentColor,
                 tabBarLabel: 'Appointments',
                 tabBarIcon: ({ color }) => (
-                    
+
                     <MaterialCommunityIcons name='clock-time-seven-outline' size={26} color={color} />
                 ),
 
@@ -77,44 +80,67 @@ const MyTabs = () =>
 
 const RootStackScreen = () => {
     return (
-            <Stack.Navigator>
-                <Stack.Screen name="SplashScreen" component={Splash} options={{ headerShown: false }} />
-                <Stack.Screen name="LoginScreen" component={Login} options={{ headerShown: false }} />
-                <Stack.Screen name="SignUpScreen" component={Signup} options={{ headerShown: false }} />
-                <Stack.Screen name="Home" component={MyTabs} options={{ headerShown: false }} />
-            </Stack.Navigator>
-        
+        <Stack.Navigator>
+            <Stack.Screen name="SplashScreen" component={Splash} options={{ headerShown: false }} />
+            <Stack.Screen name="LoginScreen" component={Login} options={{ headerShown: false }} />
+            <Stack.Screen name="SignUpScreen" component={Signup} options={{ headerShown: false }} />
+            <Stack.Screen name="Home" component={MyTabs} options={{ headerShown: false }} />
+        </Stack.Navigator>
+
     );
 };
 
 const MainNavigator = createDrawerNavigator();
 const CustomDrawer = () =>
     <NavigationContainer>
-        <MainNavigator.Navigator 
-        drawerContentOptions={{
-          activeTintColor: Colors.accentColor,
-        }}>
-        
+        <MainNavigator.Navigator
+            drawerContentOptions={{
+                activeTintColor: Colors.accentColor,
+            }}>
+
             <MainNavigator.Screen
                 name="MainScreen"
                 component={RootStackScreen}
-                
                 options={{
                     drawerLabel: 'Home',
                     drawerIcon: () => <Icon name="ios-home-outline" size={26} />,
-                    
                 }} />
-            
-            <MainNavigator.Screen 
-            name="Filter" 
-            component={Filter} 
-            options={{ 
-                drawerIcon: () => <Icon name="ios-filter" size={26} />,
-                activeTintColor: Colors.accentColor,
+
+            <MainNavigator.Screen
+                name="Profile"
+                component={Profile}
+                options={{
+                    drawerIcon: () => <MaterialCommunityIcons name='account-circle-outline' size={26} />,
+                    activeTintColor: Colors.accentColor,
+                }} />
+
+            <MainNavigator.Screen
+                name="Settings"
+                component={Settings}
+                options={{
+                    drawerIcon: () => <Icon name='settings' size={26} />,
+                    activeTintColor: Colors.accentColor,
+                }} />
+
+            <MainNavigator.Screen
+                name="Insurance"
+                component={Insurance}
+                options={{
+                    drawerIcon: () => <MaterialCommunityIcons name='badge-account-outline' size={26} />,
+                    activeTintColor: Colors.accentColor,
+                }} />
+                
+            <MainNavigator.Screen
+                name="About"
+                component={About}
+                options={{
+                    drawerIcon: () => <MaterialCommunityIcons name='alert-circle-outline' size={26} />,
+                    activeTintColor: Colors.accentColor,
                 }} />
 
         </MainNavigator.Navigator>
+
     </NavigationContainer>
-    
+
 
 export default CustomDrawer;

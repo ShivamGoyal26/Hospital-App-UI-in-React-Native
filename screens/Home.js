@@ -1,15 +1,17 @@
 import React from 'react';
 import MainHeader from '../Header/Header';
-import { View, Text, StyleSheet } from 'react-native';  
+import { View, Text, StyleSheet } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 
 const Home = props => {
     return (
         <View style={styles.home}>
-            <MainHeader onSelect = {() => {
+            <MainHeader onSelect={() => {
                 props.navigation.toggleDrawer();
-            }}/>
+            }} 
+            title = "Home"
+            />
 
             {/* COMPONENT ONE  */}
 

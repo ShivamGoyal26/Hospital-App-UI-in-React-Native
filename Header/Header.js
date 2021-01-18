@@ -15,7 +15,7 @@ const MainHeader = props => {
                 <View ><Icon name='md-menu' size={26} color={'white'} /></View>
             </TouchableOpacity>
             <View> 
-                <Text style={styles.headerText}>Home</Text>
+                <Text style={styles.headerText}>{props.title}</Text>
             </View>
             <View style={styles.menu}>
                 <Text style={styles.menu}></Text>
