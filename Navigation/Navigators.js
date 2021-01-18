@@ -18,6 +18,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import Settings from '../screens/Settings';
 import Insurance from '../screens/Insurance';
 import About from '../screens/About';
+import DrawerContent from '../screens/DrawerContent';
 
 
 const Stack = createStackNavigator();
@@ -93,10 +94,11 @@ const RootStackScreen = () => {
 const MainNavigator = createDrawerNavigator();
 const CustomDrawer = () =>
     <NavigationContainer>
-        <MainNavigator.Navigator
+        <MainNavigator.Navigator    
+        drawerContent = {DrawerContent}
             drawerContentOptions={{
                 activeTintColor: Colors.accentColor,
-            }}>
+            }}> 
 
             <MainNavigator.Screen
                 name="MainScreen"
@@ -106,7 +108,7 @@ const CustomDrawer = () =>
                     drawerIcon: () => <Icon name="ios-home-outline" size={26} />,
                 }} />
 
-            <MainNavigator.Screen
+            {/* <MainNavigator.Screen
                 name="Profile"
                 component={Profile}
                 options={{
@@ -129,14 +131,14 @@ const CustomDrawer = () =>
                     drawerIcon: () => <MaterialCommunityIcons name='badge-account-outline' size={26} />,
                     activeTintColor: Colors.accentColor,
                 }} />
-                
+
             <MainNavigator.Screen
                 name="About"
                 component={About}
                 options={{
                     drawerIcon: () => <MaterialCommunityIcons name='alert-circle-outline' size={26} />,
                     activeTintColor: Colors.accentColor,
-                }} />
+                }} /> */}
 
         </MainNavigator.Navigator>
 
