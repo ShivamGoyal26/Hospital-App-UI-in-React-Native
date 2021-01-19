@@ -2,7 +2,6 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import {
-    DrawerContentScrollView,
     DrawerItem
 } from '@react-navigation/drawer';
 import {
@@ -11,16 +10,13 @@ import {
     Caption,
     Paragraph,
     Drawer,
-    Text,
-    TouchableRipple,
-    Switch,
 } from 'react-native-paper';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const DrawerContent = props => {
     return (
         <View style={{ flex: 1 }}>
-            <DrawerContentScrollView>
-                <View style={styles.drawerContent}>
+                
                     <View style={styles.userInfoSection}>
                         <View style={{ flexDirection: 'row', marginTop: 15 }}>
                             <Avatar.Image
@@ -47,29 +43,71 @@ const DrawerContent = props => {
                         </View>
                     </View>
 
-                    <Drawer.section style={styles.drawerSection}>
-                        <DrawerItem
-                            icon={() => (
-                                <Icon
-                                    name="home"
-                                    color='red'
-                                    size={26}
-                                />
-                            )}
-                            label="Home"
-                            onPress={() => { }}
-                        />
-                    </Drawer.section>
+                <Drawer.Section>
+                <DrawerItem
+                        icon={() => (
+                            <Icon
+                                name="home-heart"
+                                color='grey'
+                                size={26}
+                            />
+                        )}
+                        label="Home"
+                        onPress={() => {
+                            props.navigation.navigate('HomeDrawer')
+                        }}
+                    />
+                    {/* </Drawer.section> */}
 
-                </View>
-            </DrawerContentScrollView>
+                    <DrawerItem
+                        icon={() => (
+                            <Ionicons
+                                name="settings-outline"
+                                color='grey'
+                                size={26}
+                            />
+                        )}
+                        label="Settings"
+                        onPress={() => {
+                            props.navigation.navigate('Settings')
+                        }}
+                    />
 
-            <Drawer.Section style={styles.bottomDrawerSection}>
+                    <DrawerItem
+                        icon={() => (
+                            <Icon
+                                name="badge-account-outline"
+                                color='grey'
+                                size={26}
+                            />
+                        )}
+                        label="Insurance"
+                        onPress={() => {
+                            props.navigation.navigate('Insurance')
+                        }}
+                    />
+
+                    <DrawerItem
+                        icon={() => (
+                            <Icon
+                                name="alert-circle-outline"
+                                color='grey'
+                                size={26}
+                            />
+                        )}
+                        label="About"
+                        onPress={() => {
+                            props.navigation.navigate('About')
+                        }}
+                    />
+            </Drawer.Section>
+
+            <Drawer.Section style={styles.drawerSection}>
                 <DrawerItem
                     icon={() => (
                         <Icon
                             name="exit-to-app"
-                            color='red'
+                            color='grey'
                             size={26}
                         />
                     )}
@@ -83,7 +121,7 @@ const DrawerContent = props => {
 
 const styles = StyleSheet.create({
     drawerContent: {
-        flex: 1,
+        // flex: 1,
     },
     userInfoSection: {
         paddingLeft: 20,

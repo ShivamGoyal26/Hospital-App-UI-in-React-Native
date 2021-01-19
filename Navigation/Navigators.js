@@ -94,11 +94,11 @@ const RootStackScreen = () => {
 const MainNavigator = createDrawerNavigator();
 const CustomDrawer = () =>
     <NavigationContainer>
-        <MainNavigator.Navigator    
-        drawerContent = {DrawerContent}
+        <MainNavigator.Navigator
+            drawerContent={DrawerContent}
             drawerContentOptions={{
                 activeTintColor: Colors.accentColor,
-            }}> 
+            }}>
 
             <MainNavigator.Screen
                 name="MainScreen"
@@ -108,7 +108,7 @@ const CustomDrawer = () =>
                     drawerIcon: () => <Icon name="ios-home-outline" size={26} />,
                 }} />
 
-            {/* <MainNavigator.Screen
+            <MainNavigator.Screen
                 name="Profile"
                 component={Profile}
                 options={{
@@ -121,6 +121,14 @@ const CustomDrawer = () =>
                 component={Settings}
                 options={{
                     drawerIcon: () => <Icon name='settings' size={26} />,
+                    activeTintColor: Colors.accentColor,
+                }} />
+
+            <MainNavigator.Screen
+                name="HomeDrawer"
+                component={Home}
+                options={{
+                    drawerIcon: () => <MaterialCommunityIcons name='badge-account-outline' size={26} />,
                     activeTintColor: Colors.accentColor,
                 }} />
 
@@ -138,7 +146,7 @@ const CustomDrawer = () =>
                 options={{
                     drawerIcon: () => <MaterialCommunityIcons name='alert-circle-outline' size={26} />,
                     activeTintColor: Colors.accentColor,
-                }} /> */}
+                }} />
 
         </MainNavigator.Navigator>
 
