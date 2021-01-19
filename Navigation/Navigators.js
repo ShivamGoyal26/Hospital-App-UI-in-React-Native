@@ -126,7 +126,7 @@ const CustomDrawer = () =>
 
             <MainNavigator.Screen
                 name="HomeDrawer"
-                component={Home}
+                component={MyTabs}
                 options={{
                     drawerIcon: () => <MaterialCommunityIcons name='badge-account-outline' size={26} />,
                     activeTintColor: Colors.accentColor,
